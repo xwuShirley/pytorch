@@ -19,7 +19,7 @@ class  Wnadam(Optimizer):
     """
 
     def __init__(self, params, lr=1.0, beta=0.9, eps=1e-8,
-                 weight_decay=0,  initial_accumulator_value=1.0， amsgrad=False):
+                 weight_decay=0,  initial_accumulator_value=1.0, amsgrad=False):
         defaults = dict(lr=lr, beta=beta, eps=eps,
                         weight_decay=weight_decay, amsgrad=amsgrad, initial_accumulator_value=initial_accumulator_value)
         super(Wnadam, self).__init__(params, defaults)
