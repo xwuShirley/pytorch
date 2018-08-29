@@ -65,7 +65,7 @@ class Wngrad(Optimizer):
                 if group['weight_decay'] != 0:
                     grad = grad.add(group['weight_decay'], p.data)
                 if  len(grad.size())==4:
-                    # Note you could aslo try this:
+                    # Note you could also try this:
                     # grad_expand = grad.view(grad.size()[0],-1)
                     grad_expand = grad.view(grad.size()[0]*grad.size()[1],-1)
                     grad_sqaure = grad_expand.norm(dim=1,p=2)**2
