@@ -34,7 +34,7 @@ class Adagradnorm(Optimizer):
             raise ValueError("Invalid initial_accumulator_value value: {}".format(initial_accumulator_value))
 
         defaults = dict(lr=lr, momentum=momentum,lr_decay=lr_decay, weight_decay=weight_decay,
-                        initial_accumulator_value=initial_accumulator_value, check=check)
+                        initial_accumulator_value=initial_accumulator_value)
         super(Adagradnorm, self).__init__(params, defaults)
 
         for group in self.param_groups:
@@ -108,11 +108,5 @@ class Adagradnorm(Optimizer):
                     if p.grad.data.is_sparse:
                         raise RuntimeError("weight_decay option is not compatible with sparse gradients")
                     grad = grad.add(group['weight_decay'], p.data)
-
-            if group['check']:
-                if  state['step']%390 == 389:
-                    print('\nStep: %d' % state['step'])
-                    print("grad")
-                    print(grad_sqaure)
 
         return loss
