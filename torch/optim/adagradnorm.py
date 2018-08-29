@@ -16,8 +16,9 @@ class Adagradnorm(Optimizer):
         lr_decay (float, optional): learning rate decay (default: 0)
         weight_decay (float, optional): weight decay (L2 penalty) (default: 0)
         initial_accumulator_value (float, optional): initial value of the adaptive sum (default: 1e-2)
-     .. _AdaGrad stepsizes: Sharp convergence over nonconvex landscapes, from any initialization: https://arxiv.org/pdf/1806.01811.pdf
-    .. _Adaptive Subgradient Methods for Online Learning and Stochastic
+     .. _AdaGrad stepsizes: Sharp convergence over nonconvex landscapes, from any 
+        initialization: https://arxiv.org/pdf/1806.01811.pdf
+     .. _Adaptive Subgradient Methods for Online Learning and Stochastic
         Optimization: http://jmlr.org/papers/v12/duchi11a.html
 
     """
