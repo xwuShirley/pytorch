@@ -107,6 +107,6 @@ class Adagradnorm(Optimizer):
                 if group['weight_decay'] != 0:
                     if p.grad.data.is_sparse:
                         raise RuntimeError("weight_decay option is not compatible with sparse gradients")
-                    grad = grad.add(group['weight_decay'], p.data)
+                    p.data.add_(-clr*group['weight_decay'], grad)
 
         return loss
